@@ -1,7 +1,7 @@
 class MessageView {
   constructor() {
+    this.inputEl = document.querySelector('#message-input')
     this.buttonEl = document.querySelector('#show-message-button');
-
     this.hidebuttonEl = document.querySelector('#hide-message-button');
 
 
@@ -18,8 +18,8 @@ class MessageView {
 
   displayMessage() {
     let newDiv = document.createElement("div")
+    newDiv.append(this.inputEl.value)
     newDiv.setAttribute("id", "message");
-    newDiv.innerText = 'This is a message displayed by JavaScript';
     this.mainContainerEl.append(newDiv);
     console.log('Thanks for clicking me!');
   }
